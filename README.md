@@ -34,16 +34,15 @@ La organización de los archivos en este repositorio sigue una estructura clara 
 /Proyecto_Bases_de_Datos/
 │
 ├── /first_part/
-│ ├── Portada.pdf
-│ ├── CapituloI.pdf
-│ ├── ER.jpg
-│ ├── ER.erdplus
-│ ├── diccionario_de_datos.pdf
-│ └── Proyecto_grupo33.pdf
-│
+ ├── Portada.pdf
+ ├── CapituloI.pdf
+ ├── ER.jpg
+ ├── ER.erdplus
+ ├── diccionario_de_datos.pdf
+ └── Proyecto_grupo33.pdf
+
 ├── /second_part/
-│ └── (Próximamente: scripts SQL, implementación de la base de datos, etc.)
-│
+ └── (Próximamente: scripts SQL, implementación de la base de datos, etc.)
 └── README.md
 
 
