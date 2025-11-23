@@ -2,19 +2,19 @@
 
 ## 📚 Información del Proyecto
 
-- **Universidad:** Universidad Nacional del Nordeste (UNNE)  
-- **Facultad:** Facultad de Ciencias Exactas y Naturales y Agrimensura  
-- **Materia:** Bases de Datos I  
-- **Profesores:**  
-  - Lic. Villegas, Darío O.  
-  - Exp. Cuzziol, Juan J.  
-  - Lic. Vallejos, Walter O.  
-  - Lic. Badaracco Numa  
-- **Alumnos Encargados:**  
-  - Gariglio, Néstor David  
-  - González Billordo, Abel Benjamín  
-  - Silva Zeniquel, Pablo  
-  - Vera, Pablo Gabriel  
+- **Universidad:** Universidad Nacional del Nordeste (UNNE)
+- **Facultad:** Facultad de Ciencias Exactas y Naturales y Agrimensura
+- **Materia:** Bases de Datos I
+- **Profesores:**
+  - Lic. Villegas, Darío O.
+  - Exp. Cuzziol, Juan J.
+  - Lic. Vallejos, Walter O.
+  - Lic. Badaracco Numa
+- **Alumnos Encargados:**
+  - Gariglio, Néstor David
+  - González Billordo, Abel Benjamín
+  - Silva Zeniquel, Pablo
+  - Vera, Pablo Gabriel
 
 ---
 
@@ -28,43 +28,43 @@ El objetivo principal de esta primera etapa fue la **descripción del caso de es
 
 ---
 
+## 🚀 Objetivo de la Segunda Entrega (Final)
+
+El objetivo de esta etapa final fue la **implementación práctica y técnica** del modelo en un motor de base de datos (**Microsoft SQL Server**), integrando lógica de negocio y optimización. Se desarrollaron los siguientes componentes:
+
+- **Implementación Física (DDL/DML):** Creación de tablas con restricciones de integridad y carga de lotes de datos de prueba masivos.
+- **Programación en Base de Datos:** Desarrollo de **Procedimientos Almacenados** (CRUD) y **Funciones** para encapsular la lógica de negocio.
+- **Integridad Transaccional:** Implementación de transacciones ACID (`COMMIT`/`ROLLBACK`) para asegurar la consistencia en el módulo de ventas.
+- **Optimización:** Análisis de rendimiento y aplicación de **Índices** (Agrupados, Cobertores y Columnares) para mejorar los tiempos de respuesta.
+
+---
+
 ## 📁 Estructura del Proyecto
 
-La organización de los archivos en este repositorio sigue una estructura clara y modular para facilitar la navegación y el desarrollo por etapas:
+La organización de los archivos en este repositorio sigue una estructura clara y modular dividida por etapas de entrega:
+
+```text
 /Proyecto_Bases_de_Datos/
-
 │
-\first_part
-  
-    \Portada.pdf
-    \CapituloI.pdf
-    \ER.jpg
-    \ER.erdplus 
-    \diccionario_de_datos.pdf
-    \Proyecto_grupo33.pdf
-\second_part
-     
-     (Próximamente: scripts SQL, implementación de la base de datos, etc.)
+├── first_part/
+│   ├── Portada.pdf
+│   ├── CapituloI.pdf
+│   ├── ER.jpg
+│   ├── ER.erdplus 
+│   ├── diccionario_de_datos.pdf
+│   └── Proyecto_grupo33.pdf
+│
+├── second_part/
+│   ├── scripts/
+│   │   ├── Script-NP..sql          (DDL - Estructura)
+│   │   ├── LoteDatos-NP.sql        (DML - Datos de prueba)
+│   │   ├── np_PA(CRUD).sql         (Procedimientos Almacenados)
+│   │   ├── np_FA.sql               (Funciones Almacenadas)
+│   │   ├── np_PA_(Update_Delete).sql (Pruebas Lógicas)
+│   │   ├── np_PA(LoteDatos).sql    (Pruebas de Rendimiento)
+│   │   ├── Script-Venta-Exitosa.sql (Transacción ACID)
+│   │   └── Script-Venta-Fallida.sql (Prueba Rollback)
+│   │
+│   └── Proyecto_BDI_Grupo33_Etapa2_Final.pdf
+│
 └── README.md
-
-
-### Descripción de los archivos en `first_part/`:
-- **`Portada.pdf`**: Portada oficial del trabajo académico.  
-- **`CapituloI.pdf`**: Introducción, planteamiento del problema y objetivos del proyecto.  
-- **`ER.jpg`**: Imagen del Esquema-Relacional(ER).  
-- **`ER.erdplus`**: Archivo fuente editable del ER (compatible con ERDPlus).  
-- **`diccionario_de_datos.pdf`**: Especificación completa del modelo relacional.  
-- **`Proyecto_grupo33.pdf`**: Documento consolidado de la primera entrega.
-
----
-
-## 🔜 Próximos Pasos
-
-La segunda entrega del proyecto se enfocará en la **implementación práctica del modelo de datos**, incluyendo:
-- Creación de la base de datos en un SGBD (por ejemplo, PostgreSQL o MySQL).
-- Generación de scripts SQL para la creación de tablas, restricciones e inserción de datos de prueba.
-- Desarrollo de consultas y vistas relevantes para el caso de uso.
-
----
-
-> 📌 *Este repositorio refleja el trabajo académico del Grupo 33 para la asignatura Bases de Datos I, ciclo lectivo 2025.*
