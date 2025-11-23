@@ -9,9 +9,12 @@ GO
 -- 1. LIMPIEZA DE DATOS DE PRUEBA
 -- Se eliminan los productos con IDs altos que se insertarán para la prueba. Esto es para reutilizar el script sin tocar los IDs 1-100 originales.
 DELETE FROM producto WHERE id_producto > 100;
-
-SELECT COUNT(*) AS productos_cargados FROM producto WHERE id_producto > 100;
 GO
+
+-- Verificación de que no quedan o quedan productos de prueba
+-- SELECT COUNT(*) AS Productos_Prueba 
+-- FROM producto
+-- WHERE id_producto > 100;
 
 --------------------------------------------------------------------------------
 -- BLOQUE A: INSERCIÓN CON SQL DIRECTO
@@ -19,6 +22,7 @@ GO
 -- Estadísticas de rendimiento 
 SET STATISTICS TIME ON;
 SET STATISTICS IO ON;
+GO
 
 -- Inicio del lote de inserción directa (100 sentencias)
 -- Reemplaza los comentarios '...' en tu script con estas 100 líneas:
@@ -126,6 +130,7 @@ INSERT INTO producto (nombre_producto, precio, stock, id_categoria, id_proveedor
 -- Deshabilitar estadísticas 
 SET STATISTICS TIME OFF;
 SET STATISTICS IO OFF;
+GO
 
 --------------------------------------------------------------------------------
 -- BLOQUE B: INSERCIÓN CON PROCEDIMIENTO ALMACENADO
@@ -133,11 +138,12 @@ SET STATISTICS IO OFF;
 -- Estadísticas de rendimiento 
 SET STATISTICS TIME ON;
 SET STATISTICS IO ON;
+GO
 
 DECLARE @i INT = 1;
 DECLARE @cat INT;
 DECLARE @prov INT;
-DECLARE @nombre VARCHAR(150);
+DECLARE @nombre VARCHAR(150)
 DECLARE @precio DECIMAL(10,2);
 
 -- Bucle WHILE para ejecutar el PA 100 veces
@@ -146,8 +152,8 @@ BEGIN
     -- Generar IDs de FKs que existen (para no fallar)
     SET @cat = ((@i - 1) % 30) + 1; -- Categoria 1 a 30
     SET @prov = ((@i - 1) % 50) + 1; -- Proveedor 1 a 50
-    SET @nombre = CONCAT('Prueba PA ', CAST(@i AS VARCHAR(10)))
-    SET @precio = 10.00 + (@i * 0.50);
+    SET @nombre = 'Prueba PA ' + CAST(@i AS VARCHAR(3))
+    SET @precio = 10.50 + ((@i -1) * 0.50);
 
     -- Invocación al Procedimiento Almacenado
     EXECUTE InsertarProducto
@@ -163,5 +169,6 @@ END
 -- Deshabilitar estadísticas (Fin del Bloque B)
 SET STATISTICS TIME OFF;
 SET STATISTICS IO OFF;
+GO
 
 PRINT '>>> Tarea 2 completada. Dos lotes de 100 productos insertados para el análisis de eficiencia.';
